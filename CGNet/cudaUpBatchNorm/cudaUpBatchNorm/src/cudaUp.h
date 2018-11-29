@@ -1,0 +1,29 @@
+
+int cudaUpBatchNorm_forward(
+    THCudaTensor* F_tensor,
+    THCudaTensor* middle_tensor,
+    THCudaTensor* output_tensor,
+    THCudaTensor* weight_tensor,
+    int L,
+    int B,
+    THIntTensor* tauIn_tensor,
+    THIntTensor* tauOut_tensor,
+    THCudaTensor* moving_std_tensor,
+    float cnt,
+    float eps,
+    int update_std);
+
+int cudaUpBatchNorm_backward(
+    THCudaTensor* weight_tensor,
+    THCudaTensor* input_tensor,
+    THCudaTensor* grad_in,
+    THCudaTensor* grad_weight,
+    THCudaTensor* grad_middle,
+    THCudaTensor* grad_out,
+    THCudaTensor* CG,
+    int L,
+    int B,
+    THIntTensor* tauIn_tensor,
+    THIntTensor* tauOut_tensor,
+    THCudaTensor* moving_std_tensor,
+    float eps);
