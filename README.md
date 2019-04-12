@@ -34,7 +34,7 @@ lie_learn: https://github.com/AMLab-Amsterdam/lie_learn
 
 ## Getting Started
 
-To be able to run SphericalCNN on GPU, we need to build the relevant cuda codes first. 
+To be able to run Clebsch-Gordan net on GPU, we need to build the relevant cuda code first. 
 
 There are two versions of SphericalCNN. They are called SphericalCNN and SphericalCNN_fast for now. SphericalCNN has most operations coded up in Python so it is more readable. SphericalCNN_fast puts most of the operations in cuda kernels, so it is a little faster - they do the same thing when used with the same parameters in the paper, however.
 
