@@ -1,6 +1,6 @@
-# Project Title
+﻿# Clebsch-Gordan Networks: A Fully Fourier Space Spherical CNN
 
-Codes used for https://papers.nips.cc/paper/8215-clebschgordan-nets-a-fully-fourier-space-spherical-convolutional-neural-network
+Code used for the experiments in https://papers.nips.cc/paper/8215-clebschgordan-nets-a-fully-fourier-space-spherical-convolutional-neural-network
 "Clebsch–Gordan Nets: a Fully Fourier Space Spherical Convolutional Neural Network", Risi Kondor, Zhen Lin, Shubhendu Trivedi, Advances in Neural Information Processing Systems, 2018
 
 # License
