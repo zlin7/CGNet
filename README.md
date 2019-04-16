@@ -1,7 +1,7 @@
 ﻿# Clebsch-Gordan Nets: A Fully Fourier Space Spherical CNN
 
-Code used for the experiments in https://papers.nips.cc/paper/8215-clebschgordan-nets-a-fully-fourier-space-spherical-convolutional-neural-network
-"Clebsch–Gordan Nets: a Fully Fourier Space Spherical Convolutional Neural Network", Risi Kondor, Zhen Lin, Shubhendu Trivedi, Advances in Neural Information Processing Systems, 2018
+Code used for experiments in the paper "Clebsch–Gordan Nets: a Fully Fourier Space Spherical Convolutional Neural Network", Risi Kondor, Zhen Lin, Shubhendu Trivedi, Advances in Neural Information Processing Systems, 2018
+(link: https://papers.nips.cc/paper/8215-clebschgordan-nets-a-fully-fourier-space-spherical-convolutional-neural-network)
 
 # License
 Copyright (c) <2018> <Zhen Lin, Shubhendu Trivedi, Risi Kondor>
@@ -34,7 +34,7 @@ lie_learn: https://github.com/AMLab-Amsterdam/lie_learn
 
 ## Getting Started
 
-To be able to run Clebsch-Gordan net on GPU, we need to build the relevant cuda code first. 
+To be able to run Clebsch-Gordan nets on GPU, we need to build the relevant cuda code first. 
 
 There are two versions of SphericalCNN. They are called SphericalCNN and SphericalCNN_fast for now. SphericalCNN has most operations coded up in Python so it is more readable. SphericalCNN_fast puts most of the operations in cuda kernels, so it is a little faster - they do the same thing when used with the same parameters in the paper, however.
 
