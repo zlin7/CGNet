@@ -27,7 +27,7 @@ def Complex_mm(w,f):
     #since f will be of shape (batch_size, tau, 2l+1, 2), multiply from the left
     return torch.stack([real,imag], 2)
 
-from cudaCG import fCG
+from cudaCG.cuda import fCG
 
 print("loaded SphericalCNN")
 

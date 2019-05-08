@@ -26,9 +26,11 @@ SOFTWARE.
 
 
 # Requirement:
-python 2.7
+python 3.6 (tested on 3.6.8)
 
-pytorch 0.40
+pytorch 1.1.0
+
+tested using cuda 10.0
 
 lie_learn: https://github.com/AMLab-Amsterdam/lie_learn
 
@@ -38,32 +40,28 @@ To be able to run Clebsch-Gordan nets on GPU, we need to build the relevant cuda
 
 There are two versions of SphericalCNN. They are called SphericalCNN and SphericalCNN_fast for now. SphericalCNN has most operations coded up in Python so it is more readable. SphericalCNN_fast puts most of the operations in cuda kernels, so it is a little faster - they do the same thing when used with the same parameters in the paper, however.
 
-Before building the cuda kernel, please check https://developer.nvidia.com/cuda-gpus to get the capability of your GPU, and change --gpu-architecture and --gpu-code in build.bash accordingly. For example, if the capability is 3.7 (Tesla K80), then set
-
-```
--gpu-architecture=compute_37 --gpu-code=compute_37
-```
-
 
 ### SphericalCNN
 
-This module uses cudaCG module for the GPU support. To build this, do the following:
+This module uses cudaCG module for the GPU support. To build this, (and perform quick testing) do the following:
 
 ```
-cd sphereProj/cudaCG/cudaCG
-bash build.bash
+cd CGNet/cudaCG/cuda
+./run.sh
 ```
 
 Then you can run main.py with settings. See main.py for options and how to set them.
 
+NOTE: although the package ClebschGordan is not necessary to run the SphericalCNN codes, it is used
+in testing the cuda kernel. To install, perform "python setup_cextension.py install" in CGNet/ClebschGordan
 
 ### SphericalCNN_fast
 
 This module has almost everything on GPU, not just the CG decomposition. To build its GPU support, do the following:
 
 ```
-cd sphereProj/cudaUpBatchNorm/cudaUpBatchNorm
-bash build.bash
+cd CGNet/cudaUpBatchNorm
+./run.sh
 ```
 
 Then you can run main_fast.py with settings. See main_fast.py for options and how to set them.
@@ -86,3 +84,7 @@ bash example.sh
 ```
 
 will run something. Logs can be found in "temp_new" folder.
+
+
+###Shreac17 example
+This is yet to be tested on python3 + pytorch 1.0. 

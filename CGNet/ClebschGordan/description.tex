@@ -1,0 +1,85 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[margin=0.5in]{geometry}
+\renewcommand{\arraystretch}{1.5}
+\graphicspath{ {images/} }
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\theoremstyle{plain}
+\newtheorem{Thm}{Theorem}
+\newtheorem{Cor}{Corollary}
+\newtheorem{Main}{Main Theorem}
+\renewcommand{\theMain}{}
+\newtheorem{Lem}{Lemma}
+\newtheorem{Prop}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}
+\newtheorem{Exer}{Exercises}
+\newtheorem{Prob}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{notation}{Notation}
+\renewcommand{\thenotation}{}
+
+\errorcontextlines=0
+\numberwithin{equation}{section}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}} 
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\begin{document}
+
+%Topmatter
+\title{Testing Clebsch-Gordan Coefficients}
+\date{\today}  %% Changed to date
+%End topmatter
+\maketitle
+\paragraph{\textbf{Wigner Matrix}}
+\begin{enumerate}
+    \item Using the \texttt{lie\_learn} library: in \texttt{https://github.com/AMLab-Amsterdam/lie\_learn/}, under 
+    \begin{verbatim}
+    lie_learn - representations - SO3 - wigner_d.py
+    \end{verbatim}
+    \item Using the table in \texttt{https://link.springer.com/content/pdf/bbm\%3A978-1-4684-0208-7\%2F1.pdf} (for rank 1 and 2 only)
+\end{enumerate}
+
+\paragraph{\textbf{Equations to test}}
+\begin{enumerate}
+    \item 
+    \begin{align*}
+        \sum_{m_1', m_2'} C^{(l_0,m_0)}_{(l_1,m_1')(l_2,m_2')} D^{(l_1)}_{m_1',m_1}(g)D^{(l_2)}_{m_2',m_2}(g) = \sum_{m_0'} D^{(l)}_{m_0,m_0'}(g) C^{(l_0,m_0')}_{(l_1,m_1)(l_2,m_2)}
+    \end{align*}
+    (\texttt{https://arxiv.org/pdf/1802.08219.pdf})
+    
+    \item Equation (A.7)
+    \begin{align*}
+        D^{l_1}_{m_1', m_1}(\Omega)D^{l_2}_{m_2',m_2}(\Omega) = \sum_{l, m, m'} C(l_1,l_2,l;m_1',m_2', m') C(l_1, l_2, l;m_1, m_2, m)D^l_{m',m}(\Omega)
+    \end{align*}
+    (\texttt{https://link.springer.com/content/pdf/bbm\%3A978-1-4684-0208-7\%2F1.pdf})
+    
+    \item 
+    \begin{align*}
+        D^l_{mn} = \sum_{m_1+m_2=n,n_1+n_2=n} D^{l_1}_{m_1 n_1} D^{l_2}_{m_2 n_2} C(l_1,l_2,l;m_1,m_2,m)C(l_1,l_2,l;n_1,n_2,n)
+    \end{align*}
+    (page 24 of \texttt{http://citeseerx.ist.psu.edu/\break viewdoc/download?doi=10.1.1.152.9702\&rep=rep1\&type=pdf})
+
+\end{enumerate}
+
+\paragraph{\textbf{Current goal}}: Verify the three equations using the two way of computing wigner matrices.
+
+\end{document}
+

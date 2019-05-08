@@ -1,13 +1,4 @@
-import numpy as np
-import random
 import torch
-from torch.autograd import Variable
-from torch.nn.parameter import Parameter
-import torch.nn as nn
-import geometries
-
-
-import ClebschGordan
 
 def _mm(t1,t2):
     if t1 is None or t2 is None:
@@ -44,8 +35,8 @@ def _kron_prod(t1,t2):
     return ret
 
 def test_krod_prod():
-    m1 = Variable(torch.Tensor([[1,2],[3,4]]))
-    m2 = Variable(torch.Tensor([[0,5],[6,7]]))
+    m1 = torch.tensor([[1,2],[3,4]])
+    m2 = torch.tensor([[0,5],[6,7]])
     print(_kron_prod(m1,m2))
     print(_kron_prod(m1.repeat(3,1,1),m2))
     print(_kron_prod(m1.repeat(3,1,1),m2.repeat(3,1,1)))

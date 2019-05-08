@@ -185,11 +185,9 @@ def eval_data_and_log(net, data, label, criterion, eval_err=None, logger_name="l
 
 #small helper
 def _update_hist(hist, cur):
-    if isinstance(cur[0], float):
-        hist[0].append(cur[0])
-    else:
-        hist[0].append(cur[0].item())
-    hist[1].append(cur[1])
+    _get_float = lambda x: x if isinstance(x, float) else x.item()
+    hist[0].append(_get_float(cur[0]))
+    hist[1].append(_get_float(cur[1]))
 
 def eval_data_in_batch(net, data, label, criterion, eval_err=None, extra_info="", logger_name="log_train", batch_size=10, CAP=None):
     logger = logging.getLogger(logger_name)
