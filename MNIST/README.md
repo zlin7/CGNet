@@ -2,10 +2,12 @@
 
 ### MNIST Example
 
-Run the following command to precompute the data for MNIST training and testing.
+First, `cd` to the parent directory.
+
+Then, run the following command to precompute the data for MNIST training and testing.
 
 ```
-python datautils.py all
+python -m MNIST.MNIST_data_process
 ```
 
 Then, if both SphericalCNN modules are correctly set up, 

@@ -26,13 +26,16 @@ SOFTWARE.
 
 
 # Requirement:
-python 3.6 (tested on 3.6.8)
+python 3.8 (tested on 3.8.5)
 
-pytorch 1.1.0
+pytorch 1.8.0
 
-tested using cuda 10.0
+tested using cuda 11.1 (only because I use RTX 30 GPU. Older versions might work as well)
 
-lie_learn: https://github.com/AMLab-Amsterdam/lie_learn
+lie_learn: https://github.com/AMLab-Amsterdam/lie_learn 
+Note that for windows system, you need to change `setup.py` in the main directory. 
+Specifically, change `extensions = cythonize(extensions)` to `extensions = cythonize(files)`
+
 
 ## Getting Started
 
@@ -46,8 +49,8 @@ There are two versions of SphericalCNN. They are called SphericalCNN and Spheric
 This module uses cudaCG module for the GPU support. To build this, (and perform quick testing) do the following:
 
 ```
-cd CGNet/cudaCG/cuda
-./run.sh
+cd CGNet/cudaCG
+python setup.py install
 ```
 
 Then you can run main.py with settings. See main.py for options and how to set them.
@@ -55,36 +58,10 @@ Then you can run main.py with settings. See main.py for options and how to set t
 NOTE: although the package ClebschGordan is not necessary to run the SphericalCNN codes, it is used
 in testing the cuda kernel. To install, perform "python setup_cextension.py install" in CGNet/ClebschGordan
 
-### SphericalCNN_fast
-
-This module has almost everything on GPU, not just the CG decomposition. To build its GPU support, do the following:
-
-```
-cd CGNet/cudaUpBatchNorm
-./run.sh
-```
-
-Then you can run main_fast.py with settings. See main_fast.py for options and how to set them.
-
-
 ## Application Example
 
 ### MNIST Example
-
-Run the following command to precompute the data for MNIST training and testing.
-
-```
-python datautils.py all
-```
-
-Then, if both SphericalCNN modules are correctly set up, 
-
-```
-bash example.sh
-```
-
-will run something. Logs can be found in "temp_new" folder.
-
+see `MNIST/README.md`.
 
 ###Shreac17 example
-This is yet to be tested on python3 + pytorch 1.0. 
+The original data seems removed. This part of the codes is thus not updated yet.
