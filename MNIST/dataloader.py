@@ -46,8 +46,6 @@ class MNISTData(Dataset):
         #_preprocessing is done here
         if torch.is_tensor(idx): idx = idx.tolist()
         if idx >= self.n: raise IndexError("%d is out of range (%d elements)"%(idx, self.n))
-        if idx >= 10000:
-            import ipdb; ipdb.set_trace()
         x = self.coefs[idx]
         y = self.labels[idx]
         #if self.to_tensor and y is not None: y = torch.tensor(y, dtype=torch.long)

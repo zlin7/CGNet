@@ -133,7 +133,7 @@ def main(args, save_period=4000):
 
     logger = logging.getLogger("log_main")
 
-    assert args.skip == 1 and args.norm == 1
+    #assert args.skip == 1 and args.norm == 1
     model = MNIST_model.MNIST_Net(args.lmax-1, args.tau_type, args.tau_man,
                                 args.nlayers, skipconn=True, norm=True, cuda=True,
                                 dropout=args.dropout, nfc=args.nfc)
