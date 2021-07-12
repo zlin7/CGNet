@@ -8,7 +8,7 @@ Copyright (c) <2018> <Zhen Lin, Shubhendu Trivedi, Risi Kondor>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
+with the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
@@ -25,12 +25,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-# Requirement:
+# Requirements:
 python 3.8 (tested on 3.8.5)
 
 pytorch 1.8.0
 
-tested using cuda 11.1 (only because I use RTX 30 GPU. Older versions might work as well)
+tested using cuda 11.1 (only because RTX 30 GPU was used for experiments. Older versions might work as well)
 
 lie_learn: https://github.com/AMLab-Amsterdam/lie_learn 
 Note that for windows system, you need to change `setup.py` in the main directory. 
@@ -53,7 +53,7 @@ cd CGNet/cudaCG
 python setup.py install
 ```
 
-Then you can run main.py with settings. See main.py for options and how to set them.
+Then run main.py with settings. See main.py for options and how to set them.
 
 NOTE: although the package ClebschGordan is not necessary to run the SphericalCNN codes, it is used
 in testing the cuda kernel. To install, perform "python setup_cextension.py install" in CGNet/ClebschGordan
@@ -63,5 +63,5 @@ in testing the cuda kernel. To install, perform "python setup_cextension.py inst
 ### MNIST Example
 see `MNIST/README.md`.
 
-###Shreac17 example
-The original data seems removed. This part of the codes is thus not updated yet.
+###SHREC17 example
+The original data seems removed. This part of the code is thus not updated yet.
