@@ -63,5 +63,5 @@ in testing the cuda kernel. To install, perform "python setup_cextension.py inst
 ### MNIST Example
 see `MNIST/README.md`.
 
-###SHREC17 example
+###SHREC17 example:
 The original data seems removed. This part of the code is thus not updated yet.
