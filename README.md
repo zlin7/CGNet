@@ -3,7 +3,7 @@
 Code used for experiments in the paper "Clebsch–Gordan Nets: a Fully Fourier Space Spherical Convolutional Neural Network", Risi Kondor, Zhen Lin, Shubhendu Trivedi, Advances in Neural Information Processing Systems, 2018
 (link: https://papers.nips.cc/paper/8215-clebschgordan-nets-a-fully-fourier-space-spherical-convolutional-neural-network)
 
-Update: Additionally, we also provide an implementation of some of the optimizations suggested in the paper: "Efficient Generalized Spherical CNNs" (ICLR 2021) by Cobb et al. https://arxiv.org/abs/2010.11661 These are optional and can be used for faster spherical CNNs (over a baseline CGNet) with some approximation. The corresponding code can be found labelled as "sparse" and "MST" in the python and CUDA code snippets. 
+Update: Additionally, we also provide an implementation of some of the optimizations suggested in the paper: "Efficient Generalized Spherical CNNs" (ICLR 2021) by Cobb et al. https://arxiv.org/abs/2010.11661 These are optional and can be used for faster spherical CNNs (over a baseline CGNet) with some approximation (don't do a full CG product). The corresponding code can be found labelled as "sparse" and "MST" in the python and CUDA code snippets. 
 
 
 # License
